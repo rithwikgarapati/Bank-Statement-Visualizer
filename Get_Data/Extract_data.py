@@ -16,14 +16,14 @@ def process_description(description: str):
     city = description[-2]
     state = description[-1]
     
-    if(len(state) > 2):
+    if len(state) > 2:
         city += state[:-2]
         state = state[-2:]
     
     description = (' '.join(description[ : -2]))
 
     # Remove un-necessary prefixes.
-    cleaned = re.sub(r'^(SQ \*|BYT\*|TST\*|POS|CARD|ATM)', '', description)
+    cleaned = re.sub(r'^(SQ \*|BYT\*|TST\*|POS|CARD|ATM)\s*', '', description)
     
     return (city, state, cleaned)
     
@@ -37,13 +37,11 @@ def read_csv( file_name ):
     transactions = []
 
     df = pd.read_csv(file_name)
-    df.columns = df.columns.str.replace(' ', '_')
 
-    for row in df.itertuples():
-        description = row.Extended_Description
-        amount = row.Amount
+    for _, row in df.iterrows():
+        description = row['Extended Description']
+        amount = row['Amount']
         
-        process_description(description)
         city, state, main_desc = process_description(description)
         
         trans = {
