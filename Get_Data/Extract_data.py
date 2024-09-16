@@ -5,7 +5,7 @@ def process_description(description: str):
     """
         - This function extracts 
             1. City
-            2. State
+            2. State 
             3. Main keywords of description
         
         - Returns (city, state, cleaned_desc)
