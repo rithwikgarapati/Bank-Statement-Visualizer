@@ -1,0 +1,40 @@
+
+Summary: A fintech tool to get advanced details about your credit card spendings. 
+
+Target Group: College Students
+    
+User Input: Credit card statement
+
+Process of training:
+
+    1. Supervised Machine Learning model
+    
+    2. Collect global data that is public to make a base model that has all major 
+       Grocery store names, entertainment names etc. 
+    
+    3. Example data element
+        {
+            "name" : "walmart",
+            "category" : "Grocery",
+            "Key_words" : ["Supermarket", "food", "retail"]
+        }
+    
+    4. Initial categories being explored:
+        - Groceries, 
+        - Dining Out, 
+        - Entertainment -> Movies, Clubs, Streaming services
+        - Housing / Rent
+        - Utilities
+        - Transportation
+        - Shopping ( clothes )
+        - Other.
+    
+    5. Fine tune this initial model with my bank statement specific examples. 
+
+
+API's used:
+    1. YELP API
+    2. 
+
+
+

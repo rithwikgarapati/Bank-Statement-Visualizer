@@ -58,7 +58,6 @@ def read_csv( file_name ):
 
 
 def main():
-    read_csv('Get_Data/credit_card_transactions.csv')
     transactions = read_csv('Get_Data/credit_card_transactions.csv')
 
     for trans in transactions:
